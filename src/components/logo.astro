@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import Log from "../assets/images/logo-white.png";
+---
+
+<a
+  href="/"
+  class="h-5 text-base group relative z-30 flex items-center space-x-1.5 text-white font-semibold"
+>
+  <span
+    class="text-xl -translate-y-0.5 group-hover:-rotate-12 group-hover:scale-[1.2] ease-in-out duration-300"
+  >
+    <Image src={Log} alt="Logo" width={30} />
+  </span>
+</a>

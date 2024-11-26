@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Páginas Web Estáticas",
+    "description": "Solución ideal para presentar información clara y directa sobre empresas, productos o servicios."
+  },
+  {
+    "title": "Páginas Web Dinámicas",
+    "description": "Las páginas dinámicas son perfectas para sitios que requieren actualizaciones frecuentes, ofreciendo una experiencia interactiva a los usuarios."
+  },
+  {
+    "title": "Backend a Medida",
+    "description": "Utilizando frameworks como Spring Boot en Java y NestJS en Node.js para crear soluciones adaptadas a tus necesidades, garantizando una infraestructura escalable y de alto rendimiento."
+  },
+  {
+    "title": "Integración de Bases de Datos",
+    "description": "Integración de bases de datos relacionales como MySQL y PostgreSQL, garantizando una estructura sólida para almacenar y gestionar tu información."
+  },
+  {
+    "title": "Desarrollo Bajo Demanda",
+    "description": "Desarrollo con JavaScript y frameworks populares como Angular, Astro, React y Next.js para crear interfaces atractivas y de alto rendimiento. Cada proyecto se construye a medida, adaptándose a las necesidades específicas de tu negocio."
+  },
+  {
+    "title": "Integración de Pasarelas de Pago",
+    "description": "Configuración de sistemas de pago seguros para tiendas en línea, incluyendo opciones populares como PayPal, Stripe, y transferencias bancarias."
+  }
+]

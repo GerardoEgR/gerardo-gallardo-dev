@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import AboutMe from "../assets/images/aboutme.svg";
+import PageHeading from "../components/page-heading.astro";
+import Layout from "../layouts/Layout.astro";
+
+const description = `
+  Soy ingeniero informático multimedia con experiencia en el desarrollo Full Stack de aplicaciones web. Mi enfoque se centra en la mejora continua y el aprendizaje constante, lo que me ha permitido trabajar con tecnologías como React, Redux, TypeScript y Angular en el front-end, así como Java, Spring Boot, Nest y MySQL en el back-end. Disfruto enfrentándome a retos complejos, transformando conceptos en soluciones funcionales y estéticamente atractivas. Asumiendo cada tarea con pasión y con un enfoque proactivo, orientado a resultados de alta calidad.<br />
+  <br />
+  En el ámbito del desarrollo ágil, tengo experiencia aplicando la metodología Scrum y el uso de Jira en la gestión de proyectos. En cuanto al control de versiones, estoy familiarizado en la utilización de Git. Además, he trabajado con BitBucket y Azure DevOps para facilitar la integración continua y el desarrollo colaborativo.<br />
+  <br />
+  Me considero una persona comprometida, responsable y empática, cualidades que me permiten trabajar colaborativamente hacia objetivos en común, estableciendo relaciones de confianza y gracias a mi capacidad de adaptación, puedo integrarme fácilmente en equipos multidisciplinarios.<br />
+  <br />
+  Si estás buscando optimizar tu presencia en línea o darle vida a tus ideas digitales, no dudes en contactarme. Estoy aquí para colaborar.<br />
+  <br />
+  <span class="font-bold sm:text-base lg:text-xl">¡Juntos podemos crear algo increíble!</span>
+  
+`;
+---
+
+<Layout title="Gerardo Gallardo Portafolio">
+  <section class="relative z-20 max-w-4xl mx-auto my-12 px-7 lg:px-0">
+    <Image
+      src={AboutMe}
+      class="relative z-30 w-2/4 my-10 rounded-xl mx-auto"
+      loading="eager"
+      decoding="auto"
+      alt={"About Me"}
+    />
+    <PageHeading title="Sobre Mí" description={description} />
+  </section>
+</Layout>

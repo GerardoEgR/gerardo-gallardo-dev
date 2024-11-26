@@ -1,0 +1,35 @@
+---
+import projects from "../collections/projects.json";
+import PageHeading from "../components/page-heading.astro";
+import Project from "../components/common/project.astro";
+import Layout from "../layouts/Layout.astro";
+
+const description = `
+  ¡Bienvenido a la sección de proyectos de mi portafolio!<br />
+  Aquí encontrarás una selección de algunos de los proyectos en los que he trabajado y que representan mi trayectoria como desarrollador Full Stack.
+`;
+---
+
+<Layout title="Gerardo Gallardo Portafolio">
+  <section class="relative z-20 max-w-4xl mx-auto my-12 px-7 lg:px-0">
+    <PageHeading title="Mis Proyectos" description={description} />
+
+    <div
+      class="z-50 grid items-stretch w-full my-8 gap-7 sm:gap-5 sm:grid-cols-2 md:grid-cols-3"
+    >
+      {
+        projects.map((project, index) => {
+          return (
+            <Project
+              name={project.name}
+              description={project.description}
+              index={index}
+              url={project.url}
+              badges={project.badges}
+            />
+          );
+        })
+      }
+    </div>
+  </section>
+</Layout>
