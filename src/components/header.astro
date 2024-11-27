@@ -64,7 +64,7 @@ import Logo from "../components/logo.astro";
             return (
               <a
                 href={menu.url}
-                class="active-menu-item relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-white nav-link"
+                class="menu-item relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-white"
               >
                 {menu.name}
               </a>
@@ -74,21 +74,42 @@ import Logo from "../components/logo.astro";
       </div>
     </nav>
   </div>
-  <script>
-    // Obtener todos los enlaces del menú
-    const navLinks = document.querySelectorAll(".active-menu-item");
-
-    // Obtener la ruta actual de la URL
-    const currentPath = window.location.pathname;
-
-    // Iterar sobre cada enlace para verificar si la ruta coincide
-    navLinks.forEach((link) => {
-      // Comprobar si el atributo href coincide con la ruta actual
-      if (link.getAttribute("href") === currentPath) {
-        link.classList.add("text-white"); // Cambia el color del texto a blanco si coincide
-      } else {
-        link.classList.remove("text-gray-400"); // Cambia el color del texto a gris si no coincide
-      }
-    });
-  </script>
 </header>
+
+<script>
+  // Obtener la ruta actual
+  const currentPath = window.location.pathname;
+  console.log(currentPath);
+
+  // Seleccionar todos los elementos del menú
+  const menuItems = document.querySelectorAll(".menu-item");
+
+  // Iterar sobre los elementos del menú
+  menuItems.forEach((item) => {
+    // Comprobar si el atributo href coincide con la ruta actual
+    if (item.getAttribute("href") === currentPath) {
+      // Agregar la clase activa al elemento
+      item.classList.add("active");
+    }
+  });
+</script>
+
+<style>
+  /* Estilo predeterminado de los enlaces */
+  .menu-item {
+    color: #9ca3af; /* Color gris neutro */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Estilo para el enlace activo */
+  .menu-item.active {
+    color: white;
+    font-weight: bold;
+  }
+
+  /* Estilo al pasar el mouse por encima */
+  .menu-item:hover {
+    color: white;
+  }
+</style>
