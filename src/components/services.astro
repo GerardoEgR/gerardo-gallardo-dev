@@ -4,7 +4,7 @@ import services from "../collections/services.json";
 
 <div class="grid items-stretch w-full md:grid-cols-2 gap-7 mt-7">
   {
-    services.map((service) => {
+    services.slice(0, 4).map((service) => {
       return (
         <div class="relative flex flex-col items-center justify-center border border-transparent border-dashed p-7 group rounded-2xl">
           <div class="absolute inset-0 z-20 w-full h-full duration-300 ease-out border border-dashed bg-neutral-950 rounded-2xl border-neutral-600" />

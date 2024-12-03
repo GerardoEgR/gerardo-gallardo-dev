@@ -60,7 +60,7 @@ import Logo from "../components/logo.astro";
           </div>
         </div>
         {
-          menus.map((menu) => {
+          menus.slice(0, 3).map((menu) => {
             return (
               <a
                 href={menu.url}
@@ -79,7 +79,6 @@ import Logo from "../components/logo.astro";
 <script>
   // Obtener la ruta actual
   const currentPath = window.location.pathname;
-  console.log(currentPath);
 
   // Seleccionar todos los elementos del menú
   const menuItems = document.querySelectorAll(".menu-item");
@@ -90,6 +89,9 @@ import Logo from "../components/logo.astro";
     if (item.getAttribute("href") === currentPath) {
       // Agregar la clase activa al elemento
       item.classList.add("active");
+    } else {
+      // Eliminar la clase activa del elemento
+      item.classList.remove("active");
     }
   });
 </script>
