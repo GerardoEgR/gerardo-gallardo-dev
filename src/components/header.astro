@@ -78,22 +78,22 @@ import Logo from "../components/logo.astro";
 
 <script>
   // Obtener la ruta actual
-  const currentPath = window.location.pathname;
+  // const currentPath = window.location.pathname;
 
-  // Seleccionar todos los elementos del menú
-  const menuItems = document.querySelectorAll(".menu-item");
+  // // Seleccionar todos los elementos del menú
+  // const menuItems = document.querySelectorAll(".menu-item");
 
-  // Iterar sobre los elementos del menú
-  menuItems.forEach((item) => {
-    // Comprobar si el atributo href coincide con la ruta actual
-    if (item.getAttribute("href") === currentPath) {
-      // Agregar la clase activa al elemento
-      item.classList.add("active");
-    } else {
-      // Eliminar la clase activa del elemento
-      item.classList.remove("active");
-    }
-  });
+  // // Iterar sobre los elementos del menú
+  // menuItems.forEach((item) => {
+  //   // Comprobar si el atributo href coincide con la ruta actual
+  //   if (item.getAttribute("href") === currentPath) {
+  //     // Agregar la clase activa al elemento
+  //     item.classList.add("active");
+  //   } else {
+  //     // Eliminar la clase activa del elemento
+  //     item.classList.remove("active");
+  //   }
+  // });
 </script>
 
 <style>
