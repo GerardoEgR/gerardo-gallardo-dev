@@ -5,14 +5,14 @@
   },
   {
     "name": "Sobre Mí",
-    "url": "/about"
+    "url": "/about/"
   },
   {
     "name": "Proyectos",
-    "url": "/projects"
+    "url": "/projects/"
   },
   {
     "name": "Servicios",
-    "url": "/niche-services"
+    "url": "/niche-services/"
   }
 ]
