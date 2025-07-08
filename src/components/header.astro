@@ -69,7 +69,7 @@ const currentUrl = Astro.url.pathname;
               <a
                 href={menu.url}
                 class={`menu-item relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-white ${
-                  isActive ? "text-neutral-100" : "text-neutral-400"
+                  !isActive ? "text-neutral-400" : "text-white"
                 }`}
               >
                 {menu.name}
