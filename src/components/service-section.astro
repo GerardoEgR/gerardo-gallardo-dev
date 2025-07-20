@@ -1,17 +1,32 @@
 ---
 import Services from "../components/services.astro";
+import Stack from "./stack.astro";
 ---
 
 <section class="max-w-4xl mx-auto px-7 lg:px-0">
   <h2 class="text-2xl font-bold leading-10 tracking-tight text-neutral-100">
     Creando Valor en Cada Solución
   </h2>
-  <p class="mb-6 text-base text-neutral-300">
-    A continuación, te presento las soluciones que encontrarás trabajando
-    conmigo.
+  <p class="mb-10 text-base text-neutral-300">
+    A continuación, te presento las tecnologías y soluciones que encontrarás
+    trabajando conmigo.
   </p>
 
-  <div class="w-full max-w-4xl mx-auto my-7 xl:px-0">
+  <div
+    class="relative flex items-center justify-center border border-transparent border-dashed py-7 group rounded-2xl"
+  >
+    <div
+      class="absolute inset-0 z-20 w-full h-full duration-300 ease-out border border-dashed bg-gray-950 rounded-2xl border-neutral-500"
+    >
+    </div>
+    <div
+      class="absolute inset-0 z-10 w-full h-full duration-300 ease-out border border-dashed rounded-2xl border-neutral-500"
+    >
+    </div>
+    <Stack />
+  </div>
+
+  <div class="w-full max-w-4xl mx-auto mb-7 xl:px-0">
     <div
       class="flex flex-col items-start justify-start md:flex-row md:space-x-7"
     >
