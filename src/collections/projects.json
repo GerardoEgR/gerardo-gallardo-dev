@@ -48,5 +48,20 @@
       "Prisma",
       "PostgreSQL"
     ]
+  },
+  {
+    "name": "Clothes Shop",
+    "description": "Tienda de ropa online.",
+    "image": "src/assets/images/store.png",
+    "url": "https://gerardoegr.github.io/region-aysen-page/",
+    "badges": [
+      "HTML",
+      "CSS",
+      "Astro",
+      "Bootstrap",
+      "JavaScript",
+      "Prisma",
+      "PostgreSQL"
+    ]
   }
 ]
