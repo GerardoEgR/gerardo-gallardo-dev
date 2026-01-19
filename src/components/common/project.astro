@@ -1,19 +1,14 @@
 ---
 import { Image } from "astro:assets";
-import Work1 from "../../assets/images/work-1.png";
-import Work2 from "../../assets/images/work-2.png";
-import Work3 from "../../assets/images/HealthNet.png";
-import Work4 from "../../assets/images/store.png";
+import type { Project } from "../../collections/projects.ts";
 
-const { name, description, url, index, badges } = Astro.props;
-
-const images = [Work1, Work2, Work3, Work4];
-const numericIndex = Number(index) || 0;
+const { name, description, url, badges, images } = Astro.props as Project;
 ---
 
 <a
   href={url}
   target="_blank"
+  data-project-card
   class="relative flex flex-col items-stretch duration-300 ease-out p-7 sm:p-3 group h-100 rounded-2xl"
 >
   <span
@@ -25,17 +20,23 @@ const numericIndex = Number(index) || 0;
   <span
     class="relative z-30 block duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1"
   >
-    <span class="block w-full">
-      <Image
-        src={images[numericIndex % images.length]}
-        class="w-full h-auto rounded-lg aspect-[16/9]"
-        alt={name}
-      />
+    <span class="block w-full relative overflow-hidden rounded-lg aspect-[16/9]">
+      {
+        images.map((image, i) => (
+          <Image
+            src={image}
+            alt={name}
+            loading={i === 0 ? "eager" : "lazy"}
+            class={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+              i === 0 ? "opacity-100" : "opacity-0"
+            }`}
+            data-index={i}
+          />
+        ))
+      }
     </span>
     <span class="block w-full px-1 mt-5 mb-5 sm:mt-3">
-      <span
-        class="flex items-center mb-0 text-base font-semibold tracking-tight text-neutral-100"
-      >
+      <span class="flex items-center mb-0 text-base font-semibold tracking-tight text-neutral-100">
         <span>{name}</span>
         <svg
           class="group-hover:translate-x-0 group-hover:translate-y-0 -rotate-45 translate-y-1 -translate-x-1 w-2.5 h-2.5 stroke-current ml-1 transition-all ease-in-out duration-200 transform"
@@ -58,8 +59,7 @@ const numericIndex = Number(index) || 0;
               ><g
                 ><polyline
                   class="transition-all duration-200 ease-out opacity-0 delay-0 group-hover:opacity-100"
-                  points="5.33333333 0 10.8333333 5.5 5.33333333 11"
-                ></polyline><line
+                  points="5.33333333 0 10.8333333 5.5 5.33333333 11"></polyline><line
                   class="transition-all duration-200 ease-out transform -translate-x-1 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 group-hover:ml-0"
                   x1="10.8333333"
                   y1="5.5"
@@ -73,13 +73,42 @@ const numericIndex = Number(index) || 0;
       <span class="text-sm text-neutral-300">{description}</span>
     </span>
     {
-      badges.map((badge: string) => {
-        return (
-          <span class="inline-flex items-center px-2.5 py-0.5 mt-2 text-xs font-normal text-neutral-300 bg-gray-700 rounded-full">
-            {badge}
-          </span>
-        );
-      })
+      badges.map((badge) => (
+        <span class="inline-flex items-center px-2.5 py-0.5 mt-2 text-xs font-normal text-neutral-300 bg-gray-700 rounded-full">
+          {badge}
+        </span>
+      ))
     }
   </span>
 </a>
+<script is:inline>
+  document.querySelectorAll("[data-project-card]").forEach((card) => {
+    const images = card.querySelectorAll("[data-index]");
+    if (images.length <= 1) return;
+
+    let index = 0;
+    let intervalId;
+
+    const showImage = (i) => {
+      images.forEach((img, idx) => {
+        img.style.opacity = idx === i ? "1" : "0";
+      });
+    };
+
+    const startCarousel = () => {
+      intervalId = setInterval(() => {
+        index = (index + 1) % images.length;
+        showImage(index);
+      }, 900);
+    };
+
+    const stopCarousel = () => {
+      clearInterval(intervalId);
+      index = 0;
+      showImage(0);
+    };
+
+    card.addEventListener("mouseenter", startCarousel);
+    card.addEventListener("mouseleave", stopCarousel);
+  });
+</script>
