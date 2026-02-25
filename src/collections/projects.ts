@@ -1,11 +1,10 @@
 
-import work1 from "../assets/images/work-1.png";
-
-import work2 from "../assets/images/work-2.png";
-
-import work3 from "../assets/images/work-3-1.png";
-import work3b from "../assets/images/work-3-2.png";
-import work3c from "../assets/images/work-3-3.png";
+import work1 from "../assets/images/work1-1.png";
+import work1b from "../assets/images/work1-2.png";
+import work1c from "../assets/images/work1-3.png";
+import work2 from "../assets/images/work2-1.png";
+import work2b from "../assets/images/work2-2.png";
+import work3c from "../assets/images/work2-3.png";
 
 export interface Project {
   name: string;
@@ -17,25 +16,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    name: "MoviesPedia",
-    description: "Aplicación Web de películas que permite el registro de usuarios.",
-    url: "https://github.com/GerardoEgR/moviesPediaPage",
-    badges: ["React", "Zustand", "Java", "Spring Boot", "Maven", "Spring Security", "MySQL"],
-    images: [work1],
-  },
-  {
     name: "BarberShop",
     description: "Landing Page para la empresa de barbería BarberShop.",
     url: "https://gerardoegr.github.io/barber-landing-page/",
     badges: ["HTML", "CSS", "Astro", "Tailwind", "JavaScript"],
-    images: [work3, work3b, work3c],
+    images: [work1, work1b, work1c],
   },
   {
-    name: "Vientos del Sur",
-    description: "Landing Page para la empresa turística Vientos del Sur.",
-    url: "https://gerardoegr.github.io/region-aysen-page/",
-    badges: ["HTML", "CSS", "Astro", "Bootstrap", "JavaScript"],
-    images: [work2],
+    name: "Noir Atelier",
+    description: "Landing Page para restaurante Noir Atelier.",
+    url: "https://gerardoegr.github.io/restaurant-landing-page/",
+    badges: ["HTML", "CSS", "Astro", "Tailwind", "JavaScript"],
+    images: [work2, work2b, work3c],
   },
 ];
 
