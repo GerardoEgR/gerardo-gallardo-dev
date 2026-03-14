@@ -1,26 +1,27 @@
 [
   {
-    "title": "Sistemas Web Estáticos",
-    "description": "Solución ideal para presentar información clara y directa sobre empresas, productos o servicios."
+    "title": "Sitios Web de Alto Rendimiento",
+    "description": "Desarrollo de sitios web estáticos ultrarrápidos y optimizados para SEO utilizando Astro. La solución ideal para presentar la identidad corporativa y servicios de tu empresa con tiempos de carga mínimos y una experiencia de usuario impecable."
   },
   {
-    "title": "Sistemas Web Dinámicos",
-    "description": "Las páginas dinámicas son perfectas para sitios que requieren actualizaciones frecuentes, ofreciendo una experiencia interactiva a los usuarios."
+    "title": "Plataformas Web y Micro SaaS",
+    "description": "Creación de aplicaciones web interactivas y escalables con Angular. Diseño soluciones frontend robustas, preparadas para manejar flujos de datos complejos, como paneles de administración o sistemas de gestión empresarial (ERP), ofreciendo una experiencia de usuario fluida."
   },
   {
-    "title": "Backend a Medida",
-    "description": "Utilizando frameworks como Spring Boot en Java y NestJS en Node.js para crear soluciones adaptadas a tus necesidades, garantizando una infraestructura escalable y de alto rendimiento."
+    "title": "Arquitecturas Backend a Medida",
+    "description": "Construcción de APIs y arquitecturas escalables utilizando NestJS, Spring Boot y Django. Implementación de microservicios, GraphQL y REST para soportar ecosistemas exigentes, garantizando alta disponibilidad, seguridad y una lógica de negocio sólida."
   },
   {
-    "title": "Integración de Bases de Datos",
-    "description": "Integración de bases de datos relacionales como MySQL y PostgreSQL, garantizando una estructura sólida para almacenar y gestionar tu información."
+    "title": "Gestión de Datos y Entornos Multi-tenant",
+    "description": "Diseño e integración de bases de datos relacionales robustas con PostgreSQL. Experiencia en arquitecturas multi-tenant y modelado de datos complejo para asegurar la integridad, separación y disponibilidad de la información en plataformas SaaS."
   },
   {
-    "title": "Desarrollo Bajo Demanda",
-    "description": "Desarrollo con JavaScript y frameworks populares como Angular, Astro, React y Next.js para crear interfaces atractivas y de alto rendimiento. Cada proyecto se construye a medida, adaptándose a las necesidades específicas de tu negocio."
+    "title": "Desarrollo Integral de MVPs",
+    "description": "Desarrollo end-to-end de Productos Mínimos Viables (MVPs) adaptados a las necesidades específicas de tu sector. Desde clínicas hasta sistemas de gestión para restaurantes o ferreterías, aseguro una rápida salida al mercado con bases sólidas para futura escalabilidad."
   },
   {
-    "title": "Integración de Pasarelas de Pago",
-    "description": "Configuración de sistemas de pago seguros para tiendas en línea, incluyendo opciones populares como PayPal, Stripe, y transferencias bancarias."
+    "title": "Integración de Pagos y Transacciones Seguras",
+    "description": "Configuración de sistemas transaccionales seguros para tus plataformas. Integración fluida con pasarelas de pago líderes (como Stripe o PayPal) para gestionar suscripciones de servicios SaaS, compras o facturación con total confiabilidad."
   }
 ]
+

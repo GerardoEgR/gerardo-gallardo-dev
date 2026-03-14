@@ -2,18 +2,21 @@
 const { text } = Astro.props;
 ---
 
-<div class="relative my-32">
+<div class="relative my-32 z-0">
   <div class="relative w-full pl-5 overflow-x-hidden md:pl-0">
     <div
-      class="absolute w-full h-px bg-gradient-to-r from-transparent to-gray-950 md:from-gray-950 md:via-transparent md:to-gray-950"
+      class="absolute w-full h-px bg-gradient-to-r from-transparent via-neutral-500/40 to-transparent"
     >
     </div>
-    <div class="w-full h-px border-t border-dashed border-neutral-500"></div>
+
+    <div class="w-full h-px border-t border-dashed border-neutral-500/60"></div>
   </div>
+
   <div
-    class="absolute flex items-center justify-center w-auto h-auto px-3 py-1.5 uppercase tracking-widest space-x-1 text-[0.6rem] md:-translate-x-1/2 -translate-y-1/2 border rounded-full bg-gray-950 text-neutral-300 left-0 md:ml-0 ml-5 md:left-1/2 border-neutral-500 shadow-sm"
+    class="absolute flex items-center justify-center w-auto h-auto px-3 py-1.5 uppercase tracking-widest space-x-1 text-[0.6rem] md:-translate-x-1/2 -translate-y-1/2 border rounded-full bg-gray-950/90 backdrop-blur text-neutral-300 left-0 md:ml-0 ml-5 md:left-1/2 border-neutral-500 shadow-sm"
   >
     <p class="leading-none">{text}</p>
+
     <div
       class="flex items-center justify-center w-5 h-5 translate-x-1 border rounded-full border-neutral-300"
     >
@@ -24,11 +27,12 @@ const { text } = Astro.props;
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        ><path
+      >
+        <path
           stroke-linecap="round"
           stroke-linejoin="round"
-          d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"></path></svg
-      >
+          d="M12 4.5v15m0 0l6.75-6.75M12 19.5l-6.75-6.75"></path>
+      </svg>
     </div>
   </div>
 </div>
