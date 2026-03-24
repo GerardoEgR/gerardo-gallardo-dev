@@ -20,10 +20,14 @@ import "../assets/css/main.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
-  <body class="antialiased bg-gradient-to-tr from-gray-950 from-90% via-90% to-100%">
+  <body
+    class="min-h-screen flex flex-col antialiased bg-gradient-to-tr from-gray-950 from-90% via-90% to-100%"
+  >
     <SquareLines />
     <Header />
-    <slot />
+    <div class="flex-grow">
+      <slot />
+    </div>
     <Footer />
     <script src="../assets/js/main.js"></script>
     <Fragment set:html={import.meta.env.FOOTER_INJECT} />
