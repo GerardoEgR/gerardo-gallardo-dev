@@ -1,0 +1,28 @@
+---
+/**
+ * ScrollReveal.astro
+ * Componente "invisible" que registra el IntersectionObserver
+ * para las animaciones .reveal y .reveal-left de toda la página.
+ *
+ * Úsalo una sola vez, al final de tu página principal (antes de </body>).
+ * Separarlo aquí evita duplicar el script en cada sección.
+ */
+---
+
+<script>
+  const revealEls = document.querySelectorAll(".reveal, .reveal-left");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  revealEls.forEach((el) => observer.observe(el));
+</script>

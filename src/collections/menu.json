@@ -1,18 +1,18 @@
 [
   {
-    "name": "Home",
-    "url": "/"
+    "href": "#hero",
+    "label": "Home"
   },
   {
-    "name": "Sobre Mí",
-    "url": "/about/"
+    "href": "#stack",
+    "label": "Stack"
   },
   {
-    "name": "Proyectos",
-    "url": "/projects/"
+    "href": "#projects",
+    "label": "Projects"
   },
   {
-    "name": "Servicios",
-    "url": "/niche-services/"
+    "href": "#services",
+    "label": "Services"
   }
 ]

@@ -1,0 +1,144 @@
+---
+import Logo from "../logo.astro";
+import menus from "../../collections/menu.json";
+---
+
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-6 py-4">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <Logo />
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-10">
+      {
+        menus.slice(0, 3).map((link) => (
+          <a
+            href={link.href}
+            class="nav-link font-body text-xs tracking-widest uppercase text-ivory-300 hover:text-gold-400 transition-colors duration-200"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a href="#contact" class="btn-gold px-5 py-2 text-xs rounded-sm"> Hablemos </a>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="ham-btn" class="md:hidden flex flex-col gap-[6px] p-2" aria-label="Menú">
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden bg-noir-900 border-t border-gold-700/20 mt-2">
+    <div class="flex flex-col gap-1 px-6 py-4">
+      {
+        menus.slice(0, 3).map((link) => (
+          <a
+            href={link.href}
+            class="mobile-nav-link py-3 text-xs tracking-widest uppercase text-ivory-300 hover:text-gold-400 border-b border-noir-700 transition-colors"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a href="#contact" class="btn-gold mt-3 px-5 py-3 text-xs rounded-sm text-center">
+        Hablemos
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Estilos scoped del Navbar -->
+<style>
+  #navbar {
+    transition:
+      background 0.4s ease,
+      box-shadow 0.4s ease;
+  }
+  #navbar.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(201, 168, 76, 0.2);
+  }
+
+  /* Hamburger lines */
+  .ham-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #c9a84c;
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+  #ham-btn.open .ham-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #ham-btn.open .ham-line:nth-child(2) {
+    opacity: 0;
+  }
+  #ham-btn.open .ham-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Mobile menu */
+  #mobile-menu {
+    transition:
+      max-height 0.4s ease,
+      opacity 0.4s ease;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+  #mobile-menu.open {
+    max-height: 400px;
+    opacity: 1;
+  }
+</style>
+
+<!-- Lógica del Navbar -->
+<script>
+  // Scroll effect
+  const navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", () => {
+    navbar?.classList.toggle("scrolled", window.scrollY > 50);
+  });
+
+  // Hamburger toggle
+  const hamBtn = document.getElementById("ham-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  hamBtn?.addEventListener("click", () => {
+    hamBtn.classList.toggle("open");
+    mobileMenu?.classList.toggle("open");
+  });
+
+  // Cerrar al hacer click en un enlace
+  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamBtn?.classList.remove("open");
+      mobileMenu?.classList.remove("open");
+    });
+  });
+
+  // Active nav link highlight on scroll
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-link");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach((sec) => {
+      if (window.scrollY >= (sec as HTMLElement).offsetTop - 100) {
+        current = sec.id;
+      }
+    });
+    navLinks.forEach((link) => {
+      link.classList.remove("text-gold-400");
+      link.classList.add("text-ivory-300");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.remove("text-ivory-300");
+        link.classList.add("text-gold-400");
+      }
+    });
+  });
+</script>

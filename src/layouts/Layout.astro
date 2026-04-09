@@ -1,35 +1,38 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
+  description?: string;
 }
 
-import Footer from "../components/common/footer.astro";
-import Header from "../components/header.astro";
-import SquareLines from "../components/square-lines.astro";
-const { title } = Astro.props;
-import "../assets/css/main.css";
+const {
+  title = "Portafolio — Fullstack Developer",
+  description = "Ingeniero Informático Multimedia y Desarrollador Full Stack",
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
     <title>{title}</title>
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <Fragment set:html={import.meta.env.HEADER_INJECT} />
+    <!-- Fuentes (también pueden moverse a un plugin de Astro) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Josefin+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body
-    class="min-h-screen flex flex-col antialiased bg-gradient-to-tr from-gray-950 from-90% via-90% to-100%"
-  >
-    <SquareLines />
-    <Header />
-    <div class="flex-grow">
-      <slot />
-    </div>
-    <Footer />
-    <script src="../assets/js/main.js"></script>
-    <Fragment set:html={import.meta.env.FOOTER_INJECT} />
+
+  <body class="relative overflow-x-hidden">
+    <slot />
   </body>
 </html>
+
+<!-- Estilos globales (no scoped) -->
+<style is:global>
+  @import "../styles/global.css";
+</style>
