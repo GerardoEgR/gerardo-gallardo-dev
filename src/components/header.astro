@@ -7,14 +7,14 @@ interface Props {
 }
 
 const {
-  title = ["Gerardo", "Gallardo."],
+  title = ["Gerardo", "Gallardo", "Rodríguez"],
   subtitle = "Ingeniero Informático Multimedia y Desarrollador Full Stack con experiencia creando soluciones digitales, preparadas para soportar ecosistemas exigentes.",
   linkedinUrl = "https://www.linkedin.com/in/gerardogallardo-dev",
   githubUrl = "https://github.com/GerardoEgR",
 } = Astro.props;
 ---
 
-<section id="hero" class="hero-bg min-h-screen flex items-center relative pt-24 pb-20">
+<section id="hero" class="hero-bg min-h-screen flex items-center relative pt-24">
   <!-- Línea decorativa vertical -->
   <div
     class="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold-600/30 to-transparent hidden lg:block ml-16"
@@ -31,13 +31,14 @@ const {
       <div class="space-y-8">
         <div class="reveal">
           <span class="section-label">Fullstack Developer</span>
-          <div class="gold-line mt-4 mb-5"></div>
+          <div class="gold-line mt-2 mb-5"></div>
         </div>
 
         <div class="reveal reveal-delay-1 pb-10">
-          <h1 class="font-display text-6xl md:text-7xl lg:text-9xl leading-none font-light">
-            <span class="text-ivory-100">{title[0]}</span><br />
+          <h1 class="font-display text-6xl md:text-7xl lg:text-8xl leading-none font-light">
+            <span class="text-ivory-100 italic">{title[0]}</span><br />
             <span class="gold-text italic">{title[1]}</span><br />
+            <span class="text-ivory-100 italic">{title[2]}</span><br />
           </h1>
         </div>
 
