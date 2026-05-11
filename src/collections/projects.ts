@@ -33,7 +33,13 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/GerardoEgR/restaurant-landing-page",
     demoUrl: "https://gerardoegr.github.io/restaurant-landing-page/",
   },
+  {
+    images: [],
+    title: "Micro SaaS de Gestión para Talleres Mecánicos - En Construcción",
+    description: "Plataforma web multi-tenant orientada a talleres mecánicos pequeños y medianos, enfocada en el flujo operativo básico y diario de forma simple, digital y centralizada.",
+    tags: ["Angular", "NestJS", "PostgreSQL", "Hexagonal Architecture", "JWT + Refresh Tokens", "TypeORM", "Multi-tenant: Tenant por organización"],
+    githubUrl: "",
+    demoUrl: "",
+  },
 
 ];
-
-
